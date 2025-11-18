@@ -1,0 +1,167 @@
+/* 1. Global Reset & Animated Background */
+:root {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Deep Space Gradient */
+  background: linear-gradient(125deg, #2c3e50, #000000, #2980b9);
+  background-size: 400% 400%;
+  animation: deepSpace 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes deepSpace {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. The Main Glass Card */
+.glass-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  border-radius: 30px;
+  padding: 4rem;
+  width: 480px;
+  max-width: 90%;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+/* 3. Input Area (The "Pill" Container) */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px; /* Padding around the inner elements */
+  border-radius: 50px; /* Pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  outline: none;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 4. The "Next-Gen" Add Button (Circular & Neon) */
+.add-btn {
+  /* Shape: Perfect Circle */
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  
+  /* Typography (The Plus Icon) */
+  font-size: 2rem;
+  line-height: 1; /* centers the + vertically */
+  color: white;
+  font-weight: 300;
+  
+  /* The Look: Neon Gradient + 3D Lighting */
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  box-shadow: 
+    0 10px 20px rgba(124, 58, 237, 0.4), /* Glow */
+    inset 0 2px 0 rgba(255, 255, 255, 0.3); /* Top Highlight */
+  
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy physics */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 15px 30px rgba(124, 58, 237, 0.6);
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+}
+
+.add-btn:active {
+  transform: scale(0.9);
+}
+
+/* 5. Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.todo-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.todo-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.is-complete {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 6. Delete Button (Subtle X) */
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0 10px;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
