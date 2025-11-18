@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_BASE = "http://localhost:5000/todos";
+const API_BASE = "api/todos";
 
 function App() {
   const [todos, setTodos] = useState([]);

@@ -18,6 +18,16 @@ dist-ssr/
 .env
 .env.local
 
+node_modules
+dist
+build
+.env
+.git
+.gitignore
+Dockerfile*
+README.md
+
+
 # Local config
 *.local
 
